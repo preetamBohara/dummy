@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Regular.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Medium.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Light.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Black.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-ExtraLight.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-SemiBold.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Thin.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-Bold.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Onest';
+    src: url('./../fonts/onest/Onest-ExtraBold.woff2') format('woff2'),
+        url('./../fonts/onest/Onest-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+  @apply md:text-[1vw]
+}
+
+
+
+
+@theme {
+  --font-onest: Onest, sans-serif;
+  --color-body-color : #111;
+  --color-body-secondary-color : #71777e;
+  --color-theme1 : #545cff;
+}
+
+.commonContainer {
+  @apply max-w-[89rem] px-5 md:px-7 lg:px-10 mx-auto
+}
+
+.commonOuterContainer {
+    @apply overflow-hidden py-10 md:py-10 lg:py-24
+}
+
+.commonMargin {
+    @apply mt-7 md:mt-10 lg:mt-24
+}
+
+.darkBg {
+    background-color: #111;
+    background-image: radial-gradient(circle at 75% 140%, #545cff 0, transparent 35%);
+}
+
+.heroTxtAnimation {
+  background: -webkit-linear-gradient(left,#545cff,#1f2246,#545cff);
+  background-size: 1600px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s linear infinite forwards;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0 1600px
+    }
+
+    to {
+        background-position: 1600px 0
+    }
+}
+
+.commonBtn {
+  @apply bg-theme1 text-white px-5 py-2 md:px-10 md:py-6 font-semibold text-base md:text-xl tracking-wide 
+  rounded-full cursor-pointer ease-linear duration-300 transition-all 
+  shadow-[0px_0px_0px_0px_#545cff] lg:hover:shadow-[0px_0px_0px_4px_#545cff]
+  overflow-hidden text-nowrap
+  relative
+  [&_span]:ease-linear
+  [&_span]:duration-300
+  [&_span]:transition-all
+  [&_.hiddenSpan]:absolute
+  [&_.hiddenSpan]:-translate-x-1/2
+  [&_.hiddenSpan]:translate-y-[5rem]
+  [&_.hiddenSpan]:top-1/2
+  [&_.hiddenSpan]:left-1/2
+  [&_.hiddenSpan]:z-10
+  lg:hover:[&_.visibleSpan]:-translate-y-[5rem]
+  lg:hover:[&_.hiddenSpan]:-translate-y-1/2
+}
+
+.commonBtn.outlineBtn {
+    @apply !bg-transparent !text-body-color !shadow-[0px_0px_0px_1px_#545cff] lg:hover:!shadow-[0px_0px_0px_2px_#545cff]
+}
+
+.commonHeading {
+    @apply text-4xl md:text-5xl font-semibold
+}
+.commonText {
+    @apply text-lg md:text-2xl font-normal
+}
+.commonTextSecondary {
+    @apply font-medium text-lg md:text-2xl text-body-secondary-color
+}
